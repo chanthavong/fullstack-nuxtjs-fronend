@@ -20,3 +20,8 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+[!sign in image](https://github.com/chanthavong/fullstack-nuxtjs-fronend/assets/signin.png)
+
+# backend
+https://github.com/chanthavong/fullstack-ci-backend

@@ -30,6 +30,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/axios.client'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -44,12 +45,21 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+    // With default plugin options
+    "vue-toastification/nuxt",
+
+    // You can also pass plugin options
+    ["vue-toastification/nuxt", {
+      timeout: 1000,
+      draggable: false
+    }]
   ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    baseURL: 'http://localhost:8888/fullstack/api/v1/'
   },
   /*
   ** vuetify module configuration

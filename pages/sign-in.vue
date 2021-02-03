@@ -11,15 +11,15 @@
         </div>
         <v-text-field
           label="Email"
-          append-icon="mdi-account-circle-outline"
+          append-icon="mdi-account-circle-outline" v-model="frm.email"
         ></v-text-field>
         <v-text-field
           label="Passoword"
           :type="!showPass ? 'password' : 'text'"
           @click:append="showPass = !showPass"
-          append-icon="mdi-eye-off"
+          append-icon="mdi-eye-off" v-model="frm.password"
         ></v-text-field>
-        <v-btn color="primary" block>Sign in</v-btn>
+        <v-btn @click.prevent="doLogin" color="primary" block>Sign in</v-btn>
       </div>
     </v-flex>
     <v-flex md6 class="blue lighten-5" fill-height>
@@ -35,9 +35,29 @@ export default {
   layout: "blank",
   data() {
     return {
-      showPass: false
+      showPass: false,
+      frm: {
+        email: '',
+        password:''
+      }
     };
-  }
+  },
+  mounted() {
+  },
+  methods: {
+    async doLogin() {
+      try {
+        let rs = await this.$axios.post('auth', this.frm)
+        let { data } =  rs
+        localStorage.setItem('user',JSON.stringify(data.user))
+        localStorage.setItem('token',data.token)
+        this.$toast('success')
+        this.$router.push('/')
+      } catch (error) {
+         this.$toast.error('fail')
+      }
+    }
+  },
 };
 </script>
 

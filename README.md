@@ -28,4 +28,7 @@ https://github.com/chanthavong/fullstack-ci-backend
 icon
 https://pictogrammers.github.io/@mdi/font/5.0.45/
 
-![sign in image](https://github.com/chanthavong/fullstack-nuxtjs-fronend/blob/master/assets/signin.png)
+
+| Image  | Image |
+|--------|-------|
+| ![sign in image](https://github.com/chanthavong/fullstack-nuxtjs-fronend/blob/master/assets/signin.png)|![sign in image](https://github.com/chanthavong/fullstack-nuxtjs-fronend/blob/master/assets/admin.png) |
